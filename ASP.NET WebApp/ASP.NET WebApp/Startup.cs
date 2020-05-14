@@ -28,7 +28,7 @@ namespace DockerForWeb
             services.AddTransient<IJsonRepository, JsonRepository>();
             services.AddTransient<IJsonManager, JsonManager>();
             services.AddDbContext<BaseDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("PostgresDatabase")));
+                options.UseSqlServer(Configuration.GetConnectionString("MSSQLDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

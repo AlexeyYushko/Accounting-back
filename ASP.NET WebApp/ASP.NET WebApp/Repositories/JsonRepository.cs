@@ -20,7 +20,7 @@ namespace DockerForWeb.Repositories
         {
             var jsonData = await dbContext.GetByIdAsync<JsonData>(id);
 
-            return jsonData.Data;
+            return jsonData.Json;
         }
     }
 }

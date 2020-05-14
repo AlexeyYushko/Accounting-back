@@ -16,9 +16,10 @@ namespace DockerForWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        [Route("GetById")]
+        public async Task<IActionResult> GetById(string id)
         {
-            var data = await jsonManager.GetJsonDataById("fac11927-bb36-4170-8b55-593cfee62089");
+            var data = await jsonManager.GetJsonDataById(id);
 
             return Ok(data);
         }
