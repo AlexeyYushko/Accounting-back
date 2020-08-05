@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DockerForWeb.Interfaces
+namespace ASPNetDocker.Interfaces
 {
     public interface IJsonRepository
     {

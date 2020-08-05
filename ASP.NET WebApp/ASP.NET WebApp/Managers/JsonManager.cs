@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using DockerForWeb.Interfaces;
+using ASPNetDocker.Interfaces;
 
-namespace DockerForWeb.Managers
+namespace ASPNetDocker.Managers
 {
     public class JsonManager: IJsonManager
     {

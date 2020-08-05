@@ -1,7 +1,7 @@
-using DockerForWeb.Context;
-using DockerForWeb.Interfaces;
-using DockerForWeb.Managers;
-using DockerForWeb.Repositories;
+using ASPNetDocker.Context;
+using ASPNetDocker.Interfaces;
+using ASPNetDocker.Managers;
+using ASPNetDocker.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DockerForWeb
+namespace ASPNetDocker
 {
     public class Startup
     {
@@ -27,6 +27,8 @@ namespace DockerForWeb
             services.AddTransient<IBaseDbContext, BaseDbContext>();
             services.AddTransient<IJsonRepository, JsonRepository>();
             services.AddTransient<IJsonManager, JsonManager>();
+            services.AddTransient<IUsersManager, UsersManager>();
+            services.AddTransient<IUsersRepository, UsersRepository>();
             services.AddDbContext<BaseDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MSSQLDatabase")));
         }

@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
-namespace DockerForWeb.Interfaces
+namespace ASPNetDocker.Interfaces
 {
     public interface IBaseDbContext
     {
-        ValueTask<T> GetByIdAsync<T>(string Id) where T : class;
+        ValueTask<T> GetByIdAsync<T>(Guid id) where T : class;
     }
 }

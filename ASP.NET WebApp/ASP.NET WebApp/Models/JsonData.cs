@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DockerForWeb.Models
+namespace ASPNetDocker.Models
 {
     public class JsonData
     {

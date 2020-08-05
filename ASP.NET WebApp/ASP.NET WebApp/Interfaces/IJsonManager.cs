@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace DockerForWeb.Interfaces
+namespace ASPNetDocker.Interfaces
 {
     public interface IJsonManager
     {

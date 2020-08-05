@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using DockerForWeb.Interfaces;
+using ASPNetDocker.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DockerForWeb.Controllers
+namespace ASPNetDocker.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

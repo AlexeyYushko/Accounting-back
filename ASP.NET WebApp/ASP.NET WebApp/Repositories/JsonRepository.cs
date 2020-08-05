@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using DockerForWeb.Interfaces;
-using DockerForWeb.Models;
+using ASPNetDocker.Interfaces;
+using ASPNetDocker.Models;
 
-namespace DockerForWeb.Repositories
+namespace ASPNetDocker.Repositories
 {
     public class JsonRepository: IJsonRepository
     {
@@ -18,7 +16,7 @@ namespace DockerForWeb.Repositories
 
         public async Task<string> GetJsonDataById(string id)
         {
-            var jsonData = await dbContext.GetByIdAsync<JsonData>(id);
+            var jsonData = await dbContext.GetByIdAsync<JsonData>(Guid.Parse(id));
 
             return jsonData.Json;
         }
