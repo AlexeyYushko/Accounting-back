@@ -2,8 +2,10 @@
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY *.csproj ./
-RUN dotnet restore
+COPY *.sln ./
+COPY ASPNetDocker/*.csproj ./ASPNetDocker/
+COPY ASPNetDocker.DataAccess/*.csproj ./ASPNetDocker.DataAccess/
+RUN dotnet restore *.sln
 
 # Copy everything else and build
 COPY . ./

@@ -1,32 +1,34 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>ASPNetDocker</AssemblyName>
     <RootNamespace>ASPNetDocker</RootNamespace>
+    <UserSecretsId>ec488fb0d45339c9aedf053497bbb501</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Remove="Data\generated.json" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Remove="Scripts\GetUserByEmail.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\GetUserByEmail.sql" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-    <PackageReference Include="Npgsql" Version="4.1.3.1" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.2" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="Services\" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\ASPNetDocker.DataAccess\ASPNetDocker.DataAccess.csproj" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\generated.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-
-
 </Project>

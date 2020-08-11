@@ -15,7 +15,7 @@ namespace ASPNetDocker.Managers
 
         public async Task<User> GetByEmail(string email)
         {
-            return await usersRepository.GetByEmail(email);
+            return await usersRepository.GetByEmailAsync(email);
         }
     }
 }

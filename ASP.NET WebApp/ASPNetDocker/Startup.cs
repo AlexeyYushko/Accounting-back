@@ -1,10 +1,11 @@
-using ASPNetDocker.Context;
+using ASPNetDocker.DataAccess.Interfaces;
+using ASPNetDocker.DataAccess.Repositories;
 using ASPNetDocker.Interfaces;
 using ASPNetDocker.Managers;
+using ASPNetDocker.Middleware;
 using ASPNetDocker.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,13 +25,10 @@ namespace ASPNetDocker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IBaseDbContext, BaseDbContext>();
-            services.AddTransient<IJsonRepository, JsonRepository>();
-            services.AddTransient<IJsonManager, JsonManager>();
             services.AddTransient<IUsersManager, UsersManager>();
             services.AddTransient<IUsersRepository, UsersRepository>();
-            services.AddDbContext<BaseDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MSSQLDatabase")));
+            services.AddTransient<IBaseRepository, BaseRepository>();
+            services.AddTransient<ISqlScriptReader, SqlScriptReader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +42,8 @@ namespace ASPNetDocker
             app.UseRouting();
             
             app.UseAuthorization();
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
