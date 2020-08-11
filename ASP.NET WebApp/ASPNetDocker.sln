@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNetDocker", "ASPNetDocker\ASPNetDocker.csproj", "{51603016-7796-4270-97C1-0A15B1E736D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetDocker.DataAccess", "ASPNetDocker.DataAccess\ASPNetDocker.DataAccess.csproj", "{47A31B65-731E-43B7-9B46-9B156524EB64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNetDocker.DataAccess", "ASPNetDocker.DataAccess\ASPNetDocker.DataAccess.csproj", "{47A31B65-731E-43B7-9B46-9B156524EB64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetDocker.Logging", "ASPNetDocker.Logging\ASPNetDocker.Logging.csproj", "{B529DCB8-D8F2-42BC-A9EB-1B302B493362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{47A31B65-731E-43B7-9B46-9B156524EB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47A31B65-731E-43B7-9B46-9B156524EB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47A31B65-731E-43B7-9B46-9B156524EB64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B529DCB8-D8F2-42BC-A9EB-1B302B493362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B529DCB8-D8F2-42BC-A9EB-1B302B493362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B529DCB8-D8F2-42BC-A9EB-1B302B493362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B529DCB8-D8F2-42BC-A9EB-1B302B493362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
