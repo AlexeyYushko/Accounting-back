@@ -1,3 +1,3 @@
 ﻿SELECT *
 FROM dbo.Users
-WHERE Email = '@email'
+WHERE Email = @email
