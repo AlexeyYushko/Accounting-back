@@ -1,5 +1,6 @@
 using ASPNetDocker.DataAccess.Interfaces;
 using ASPNetDocker.DataAccess.Repositories;
+using ASPNetDocker.Extensions;
 using ASPNetDocker.Interfaces;
 using ASPNetDocker.Managers;
 using ASPNetDocker.Middleware;
@@ -43,12 +44,15 @@ namespace ASPNetDocker
             
             app.UseAuthorization();
 
+            app.UseCustomCors();
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.UsePing();
         }
     }
 }

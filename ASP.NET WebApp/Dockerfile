@@ -5,6 +5,7 @@ WORKDIR /app
 COPY *.sln ./
 COPY ASPNetDocker/*.csproj ./ASPNetDocker/
 COPY ASPNetDocker.DataAccess/*.csproj ./ASPNetDocker.DataAccess/
+COPY ASPNetDocker.Logging/*.csproj ./ASPNetDocker.Logging/
 RUN dotnet restore *.sln
 
 # Copy everything else and build
