@@ -21,6 +21,7 @@ namespace ASPNetDocker
         }
 
         public IConfiguration Configuration { get; }
+        private readonly string myAllowedSpecificOrigins = "allowedSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -30,6 +31,15 @@ namespace ASPNetDocker
             services.AddTransient<IUsersRepository, UsersRepository>();
             services.AddTransient<IBaseRepository, BaseRepository>();
             services.AddTransient<ISqlScriptReader, SqlScriptReader>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: myAllowedSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5300");
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +54,7 @@ namespace ASPNetDocker
             
             app.UseAuthorization();
 
-            app.UseCustomCors();
+            app.UseCors(myAllowedSpecificOrigins);
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseEndpoints(endpoints =>
