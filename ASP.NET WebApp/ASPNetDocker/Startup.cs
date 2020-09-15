@@ -38,6 +38,8 @@ namespace ASPNetDocker
                     builder =>
                     {
                         builder.WithOrigins("http://localhost:5300");
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
                     });
             });
         }
