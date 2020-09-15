@@ -17,5 +17,10 @@ namespace ASPNetDocker.Managers
         {
             return await usersRepository.GetByEmailAsync(email);
         }
+
+        public async Task<User> CreateNewUser(User user)
+        {
+            return await usersRepository.CreateNewUser(user);
+        }
     }
 }

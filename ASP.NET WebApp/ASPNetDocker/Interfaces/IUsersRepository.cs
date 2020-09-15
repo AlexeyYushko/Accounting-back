@@ -7,5 +7,6 @@ namespace ASPNetDocker.Interfaces
     public interface IUsersRepository: IBaseRepository
     {
         Task<User> GetByEmailAsync(string id);
+        Task<User> CreateNewUser(User user);
     }
 }

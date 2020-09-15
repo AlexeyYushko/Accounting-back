@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using ASPNetDocker.Interfaces;
+using ASPNetDocker.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNetDocker.Controllers
@@ -22,6 +23,13 @@ namespace ASPNetDocker.Controllers
             var user = await usersManager.GetByEmail(email);
 
             return Ok(user);
+        }
+
+        [HttpPost]
+        [Route("CreateNewUser")]
+        public async Task<IActionResult> CreateNewUser([FromBody] User user)
+        {
+            return Ok(await usersManager.CreateNewUser(user));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ASPNetDocker.Interfaces;
+﻿using System;
+using ASPNetDocker.Interfaces;
 using ASPNetDocker.Models;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -23,9 +24,20 @@ namespace ASPNetDocker.Repositories
         {
             var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetUserByEmail.sql"), new { email = email });
 
-            var u = await FirstOrDefaultAsync<User>(connectionString, queryObject);
+            var user = await FirstOrDefaultAsync<User>(connectionString, queryObject);
 
-            return u;
+            return user;
+        }
+
+        public async Task<User> CreateNewUser(User user)
+        {
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.CreateNewUser.sql"), new { email = user.Email, password = user.Password, name = user.UserName });
+
+            var newId = await FirstOrDefaultAsync<Guid>(connectionString, queryObject);
+
+            user.Id = newId;
+
+            return user;
         }
     }
 }
