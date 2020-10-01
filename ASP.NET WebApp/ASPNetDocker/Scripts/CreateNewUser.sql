@@ -1,6 +1,6 @@
 ﻿DECLARE @NewId UNIQUEIDENTIFIER = NEWID()
 
-INSERT dbo.Users
+INSERT dbo.Users(Id, Username, Password, Email)
 SELECT 
 	@NewId,
 	@name,
