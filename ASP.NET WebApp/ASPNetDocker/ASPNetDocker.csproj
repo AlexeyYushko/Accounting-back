@@ -11,10 +11,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Scripts\CreateNewUser.sql" />
+    <None Remove="Scripts\GetBillByUserId.sql" />
     <None Remove="Scripts\GetUserByEmail.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\CreateNewUser.sql" />
+    <EmbeddedResource Include="Scripts\GetBillByUserId.sql" />
     <EmbeddedResource Include="Scripts\GetUserByEmail.sql" />
   </ItemGroup>
   <ItemGroup>

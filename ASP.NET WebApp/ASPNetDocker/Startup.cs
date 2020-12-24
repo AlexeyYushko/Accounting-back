@@ -29,6 +29,8 @@ namespace ASPNetDocker
             services.AddControllers();
             services.AddTransient<IUsersManager, UsersManager>();
             services.AddTransient<IUsersRepository, UsersRepository>();
+            services.AddTransient<IBillManager, BillManager>();
+            services.AddTransient<IBillRepository, BillRepository>();
             services.AddTransient<IBaseRepository, BaseRepository>();
             services.AddTransient<ISqlScriptReader, SqlScriptReader>();
 
