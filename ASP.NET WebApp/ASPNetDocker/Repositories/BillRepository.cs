@@ -10,7 +10,7 @@ namespace ASPNetDocker.Repositories
 {
     public class BillRepository : BaseRepository, IBillRepository
     {
-        private string connectionString;
+        private readonly string connectionString;
         private readonly ISqlScriptReader scriptReader;
         protected override int DefaultTimeoutSeconds => 60;
 
