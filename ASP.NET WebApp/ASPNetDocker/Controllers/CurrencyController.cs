@@ -18,9 +18,9 @@ namespace ASPNetDocker.Controllers
 
         [HttpGet]
         [Route("GetExchangeRates")]
-        public async Task<IActionResult> GetExchangeRates(Guid baseCurrencyId)
+        public async Task<IActionResult> GetExchangeRates(string baseCurrencyName)
         {
-            var rates = await currencyManager.GetExchangeRates(baseCurrencyId);
+            var rates = await currencyManager.GetExchangeRates(baseCurrencyName);
 
             return Ok(rates);
         }

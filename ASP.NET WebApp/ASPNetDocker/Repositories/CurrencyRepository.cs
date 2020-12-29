@@ -21,9 +21,9 @@ namespace ASPNetDocker.Repositories
             this.scriptReader = scriptReader;
         }
 
-        public async Task<IEnumerable<ExchangeRate>> GetExchangeRates(Guid baseCurrencyId)
+        public async Task<IEnumerable<ExchangeRate>> GetExchangeRates(string baseCurrencyName)
         {
-            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetExchangeRatesByCurrencyId.sql"), new { currencyId = baseCurrencyId });
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetExchangeRatesByCurrencyName.sql"), new { baseCurrencyName = baseCurrencyName });
 
             return await QueryAsync<ExchangeRate>(connectionString, queryObject);
         }

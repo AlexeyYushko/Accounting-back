@@ -1,6 +1,5 @@
 ﻿using ASPNetDocker.Interfaces;
 using ASPNetDocker.Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,9 +14,9 @@ namespace ASPNetDocker.Managers
             this.currencyRepository = currencyRepository;
         }
 
-        public async Task<IEnumerable<ExchangeRate>> GetExchangeRates(Guid baseCurrencyId)
+        public async Task<IEnumerable<ExchangeRate>> GetExchangeRates(string baseCurrencyName)
         {
-            return await currencyRepository.GetExchangeRates(baseCurrencyId);
+            return await currencyRepository.GetExchangeRates(baseCurrencyName);
         }
     }
 }
