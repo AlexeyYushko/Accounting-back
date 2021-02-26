@@ -7,16 +7,24 @@
     <UserSecretsId>ec488fb0d45339c9aedf053497bbb501</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Remove="Data\generated.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Scripts\CreateNewUser.sql" />
+    <None Remove="Scripts\AddCategory.sql" />
+    <None Remove="Scripts\AddUser.sql" />
     <None Remove="Scripts\GetBillByUserId.sql" />
     <None Remove="Scripts\GetExchangeRatesByCurrencyName.sql" />
     <None Remove="Scripts\GetUserByEmail.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\CreateNewUser.sql" />
+    <EmbeddedResource Include="Scripts\AddCategory.sql" />
+    <EmbeddedResource Include="Scripts\AddUser.sql" />
     <EmbeddedResource Include="Scripts\GetBillByUserId.sql" />
     <EmbeddedResource Include="Scripts\GetExchangeRatesByCurrencyName.sql" />
     <EmbeddedResource Include="Scripts\GetUserByEmail.sql" />
@@ -27,7 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ASPNetDocker.DataAccess\ASPNetDocker.DataAccess.csproj" />

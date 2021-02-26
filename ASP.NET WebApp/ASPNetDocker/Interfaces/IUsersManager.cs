@@ -6,6 +6,6 @@ namespace ASPNetDocker.Interfaces
     public interface IUsersManager
     {
         Task<User> GetByEmail(string email);
-        Task<User> CreateNewUser(User user);
+        Task<User> AddUser(User user);
     }
 }

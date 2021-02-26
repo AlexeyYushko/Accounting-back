@@ -3,8 +3,8 @@
 INSERT dbo.Users(Id, Username, Password, Email)
 SELECT 
 	@NewId,
-	@name,
-	@password,
-	@email
+	@UserName,
+	@Password,
+	@Email
 
 SELECT @NewId

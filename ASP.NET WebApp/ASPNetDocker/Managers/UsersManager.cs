@@ -15,12 +15,12 @@ namespace ASPNetDocker.Managers
 
         public async Task<User> GetByEmail(string email)
         {
-            return await usersRepository.GetByEmailAsync(email);
+            return await usersRepository.GetByEmail(email);
         }
 
-        public async Task<User> CreateNewUser(User user)
+        public async Task<User> AddUser(User user)
         {
-            return await usersRepository.CreateNewUser(user);
+            return await usersRepository.AddUser(user);
         }
     }
 }

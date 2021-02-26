@@ -20,7 +20,7 @@ namespace ASPNetDocker.Repositories
             this.scriptReader = scriptReader;
         }
 
-        public async Task<User> GetByEmailAsync(string email)
+        public async Task<User> GetByEmail(string email)
         {
             var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetUserByEmail.sql"), new { email = email });
 
@@ -29,9 +29,9 @@ namespace ASPNetDocker.Repositories
             return user;
         }
 
-        public async Task<User> CreateNewUser(User user)
+        public async Task<User> AddUser(User user)
         {
-            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.CreateNewUser.sql"), new { email = user.Email, password = user.Password, name = user.UserName });
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.AddUser.sql"), new { user.Email, user.Password, user.UserName });
 
             var newId = await FirstOrDefaultAsync<Guid>(connectionString, queryObject);
 
