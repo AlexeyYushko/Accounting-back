@@ -22,5 +22,11 @@ namespace ASPNetDocker.Controllers
         {
             return Ok(await categoryManager.AddCategory(category));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await categoryManager.GetAllCategories());
+        }
     }
 }

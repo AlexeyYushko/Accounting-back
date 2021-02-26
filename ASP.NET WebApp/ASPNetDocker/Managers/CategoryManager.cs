@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using ASPNetDocker.Interfaces;
 using ASPNetDocker.Models;
 
@@ -16,6 +17,11 @@ namespace ASPNetDocker.Managers
         public async Task<Category> AddCategory(Category category)
         {
             return await categoryRepository.AddCategory(category);
+        }
+
+        public async Task<IEnumerable<Category>> GetAllCategories()
+        {
+            return await categoryRepository.GetAllCategories();
         }
     }
 }
