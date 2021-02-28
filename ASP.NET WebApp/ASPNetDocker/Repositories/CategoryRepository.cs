@@ -38,5 +38,14 @@ namespace ASPNetDocker.Repositories
 
             return await QueryAsync<Category>(connectionString, queryObject);
         }
+
+        public async Task<Category> UpdateCategory(Guid id, Category category)
+        {
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.UpdateCategory.sql"), new { category.Name, category.Capacity, id });
+
+            category = await FirstOrDefaultAsync<Category>(connectionString, queryObject);
+
+            return category;
+        }
     }
 }

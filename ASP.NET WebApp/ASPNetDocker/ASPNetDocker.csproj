@@ -22,8 +22,10 @@
     <None Remove="Scripts\GetBillByUserId.sql" />
     <None Remove="Scripts\GetExchangeRatesByCurrencyName.sql" />
     <None Remove="Scripts\GetUserByEmail.sql" />
+    <None Remove="Scripts\UpdateCategory.sql" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Scripts\UpdateCategory.sql" />
     <EmbeddedResource Include="Scripts\GetAllCategories.sql" />
     <EmbeddedResource Include="Scripts\AddCategory.sql" />
     <EmbeddedResource Include="Scripts\AddUser.sql" />

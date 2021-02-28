@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using ASPNetDocker.Interfaces;
 using ASPNetDocker.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,13 @@ namespace ASPNetDocker.Controllers
         public async Task<IActionResult> Get()
         {
             return Ok(await categoryManager.GetAllCategories());
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody]Category category)
+        {
+            return Ok(await categoryManager.UpdateCategory(id, category));
         }
     }
 }

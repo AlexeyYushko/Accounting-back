@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ASPNetDocker.Interfaces;
 using ASPNetDocker.Models;
@@ -22,6 +23,11 @@ namespace ASPNetDocker.Managers
         public async Task<IEnumerable<Category>> GetAllCategories()
         {
             return await categoryRepository.GetAllCategories();
+        }
+
+        public async Task<Category> UpdateCategory(Guid id, Category category)
+        {
+            return await categoryRepository.UpdateCategory(id, category);
         }
     }
 }
