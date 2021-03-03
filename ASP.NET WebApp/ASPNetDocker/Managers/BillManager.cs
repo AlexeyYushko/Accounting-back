@@ -18,5 +18,10 @@ namespace ASPNetDocker.Managers
         {
             return await billRepository.GetByUserId(userId);
         }
+
+        public async Task<Bill> UpdateBill(Guid id, Bill bill)
+        {
+            return await billRepository.UpdateBill(id, bill);
+        }
     }
 }

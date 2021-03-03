@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using ASPNetDocker.Models;
 
 namespace ASPNetDocker.Controllers
 {
@@ -23,6 +24,13 @@ namespace ASPNetDocker.Controllers
             var bill = await billManager.GetByUserId(userId);
 
             return Ok(bill);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] Bill bill)
+        {
+            return Ok(await billManager.UpdateBill(id, bill));
         }
     }
 }

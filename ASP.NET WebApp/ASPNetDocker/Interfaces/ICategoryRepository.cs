@@ -10,7 +10,6 @@ namespace ASPNetDocker.Interfaces
     {
         Task<Category> AddCategory(Category category);
         Task<Category> UpdateCategory(Guid id, Category category);
-
         Task<IEnumerable<Category>> GetAllCategories();
     }
 }

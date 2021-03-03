@@ -17,14 +17,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Scripts\AddCategory.sql" />
+    <None Remove="Scripts\AddEvent.sql" />
     <None Remove="Scripts\AddUser.sql" />
     <None Remove="Scripts\GetAllCategories.sql" />
     <None Remove="Scripts\GetBillByUserId.sql" />
     <None Remove="Scripts\GetExchangeRatesByCurrencyName.sql" />
     <None Remove="Scripts\GetUserByEmail.sql" />
+    <None Remove="Scripts\UpdateBill.sql" />
     <None Remove="Scripts\UpdateCategory.sql" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Scripts\AddEvent.sql" />
+    <EmbeddedResource Include="Scripts\UpdateBill.sql" />
     <EmbeddedResource Include="Scripts\UpdateCategory.sql" />
     <EmbeddedResource Include="Scripts\GetAllCategories.sql" />
     <EmbeddedResource Include="Scripts\AddCategory.sql" />

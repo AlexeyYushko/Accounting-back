@@ -3,7 +3,7 @@
 INSERT dbo.Category(Id, Name, Capacity)
 SELECT 
 	@NewId,
-	@name,
-	@capacity
+	@Name,
+	@Capacity
 
 SELECT @NewId

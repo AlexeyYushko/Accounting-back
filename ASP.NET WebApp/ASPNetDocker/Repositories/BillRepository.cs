@@ -22,9 +22,18 @@ namespace ASPNetDocker.Repositories
 
         public async Task<Bill> GetByUserId(Guid userId)
         {
-            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetBillByUserId.sql"), new { userId = userId });
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.GetBillByUserId.sql"), new { userId });
 
             var bill = await FirstOrDefaultAsync<Bill>(connectionString, queryObject);
+
+            return bill;
+        }
+
+        public async Task<Bill> UpdateBill(Guid id, Bill bill)
+        {
+            var queryObject = new QueryObject(scriptReader.Get(this, "Scripts.UpdateBill.sql"), new { bill.Amount, bill.Id });
+
+            bill = await FirstOrDefaultAsync<Bill>(connectionString, queryObject);
 
             return bill;
         }

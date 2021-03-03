@@ -37,6 +37,8 @@ namespace ASPNetDocker
             services.AddTransient<ICurrencyRepository, CurrencyRepository>();
             services.AddTransient<ICategoryManager, CategoryManager>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IEventManager, EventManager>();
+            services.AddTransient<IEventRepository, EventRepository>();
 
             services.AddCors(options =>
             {
