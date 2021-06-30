@@ -45,7 +45,7 @@ namespace ASPNetDocker
                 options.AddPolicy(name: myAllowedSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200");
+                        builder.WithOrigins("http://localhost:5200");
                         builder.AllowAnyMethod();
                         builder.AllowAnyHeader();
                     });
